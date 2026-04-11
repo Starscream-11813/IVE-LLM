@@ -1,0 +1,176 @@
+﻿============================================================
+  IVE-LLM ANALYSIS
+============================================================
+  [OK] Loaded exp1: 3726 valid trials from exp1_basic_ive.csv
+  [OK] Loaded exp2: 3798 valid trials from exp2_explicit_debiasing.csv
+  [OK] Loaded exp3: 5685 valid trials from exp3_framing.csv
+  [OK] Loaded exp4: 3903 valid trials from exp4_joint_separate.csv
+  [OK] Loaded exp5: 3701 valid trials from exp5_processing_prime.csv
+  [OK] Loaded exp6: 8238 valid trials from exp6_chain_of_thought.csv
+  [OK] Loaded exp7: 2492 valid trials from exp7_psychophysical_numbing.csv
+  [OK] Loaded exp8: 8275 valid trials from exp8_singularity.csv
+  [OK] Loaded exp9: 6148 valid trials from exp9_identification_gradient.csv
+  [OK] Loaded exp10: 5989 valid trials from exp10_ingroup_outgroup.csv
+
+============================================================
+  EXP1 RESULTS
+============================================================
+
+  Per-Model IVE:
+    gemini-3.1-pro        Ident=5.0  Stat=4.138  d=1.0067  p=0.0
+    gemini-2.5-flash      Ident=5.0  Stat=5.0  d=0.0  p=None
+    claude-opus-4.6       Ident=2.954  Stat=3.0  d=-0.3087  p=0.080837
+    gpt-5.2               Ident=3.277  Stat=3.954  d=-0.8569  p=3e-06
+    gpt-oss-20b           Ident=3.154  Stat=3.308  d=-0.1919  p=0.276124
+    deepseek-v3           Ident=4.323  Stat=3.615  d=0.7512  p=3.6e-05
+    deepseek-r1           Ident=2.8  Stat=3.108  d=-0.4398  p=0.013415
+    grok-4                Ident=4.292  Stat=3.892  d=0.4069  p=0.021939
+    qwen3-235b            Ident=4.292  Stat=3.4  d=1.0043  p=0.0
+    kimi-k2.5             Ident=4.368  Stat=3.188  d=1.5622  p=5.9e-05
+    granite-3.3-8b        Ident=5.0  Stat=4.908  d=0.3087  p=0.080837
+    llama3-70b-instruct   Ident=5.0  Stat=4.015  d=1.3819  p=0.0
+    llama3-70b-base       Ident=3.115  Stat=2.25  d=0.4718  p=0.027333
+    llama3-8b-instruct    Ident=5.0  Stat=5.0  d=0.0  p=None
+    llama3-8b-base        Ident=1.406  Stat=3.0  d=-0.7017  p=0.123485
+    gpt-oss-120b          Ident=4.723  Stat=3.123  d=1.5521  p=0.0
+
+  Pooled: d=0.223  p=2e-06
+
+============================================================
+  EXP2 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_none                    M=2.983  SD=0.99  n=942
+    identifiable_teaching                M=2.984  SD=1.045  n=927
+    statistical_none                     M=2.627  SD=0.951  n=962
+    statistical_teaching                 M=2.448  SD=0.868  n=967
+
+  Simple Effects:
+    identifiable          d=-0.0008  p=0.986375
+    statistical           d=0.1967  p=1.6e-05
+
+  Meta-Knowledge: 94.5% aware (n=3709)
+
+============================================================
+  EXP3 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_frame_more              M=3.069  SD=0.992  n=937
+    identifiable_frame_less              M=3.051  SD=1.086  n=954
+    identifiable_frame_normative         M=3.321  SD=1.111  n=956
+    statistical_frame_more               M=2.708  SD=1.036  n=955
+    statistical_frame_less               M=2.732  SD=0.991  n=958
+    statistical_frame_normative          M=3.019  SD=1.064  n=925
+
+============================================================
+  EXP4 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable                         M=2.945  SD=1.124  n=978
+    statistical                          M=2.787  SD=1.089  n=982
+    combined                             M=2.856  SD=1.103  n=1943
+
+============================================================
+  EXP5 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_calculate               M=2.844  SD=1.011  n=928
+    identifiable_feel                    M=3.359  SD=0.976  n=912
+    statistical_calculate                M=2.756  SD=1.074  n=931
+    statistical_feel                     M=2.863  SD=1.123  n=930
+
+  Simple Effects:
+    identifiable          d=-0.5179  p=0.0
+    statistical           d=-0.0976  p=0.035404
+
+============================================================
+  EXP6 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_none                    M=3.006  SD=1.141  n=1028
+    identifiable_standard                M=3.265  SD=1.054  n=1015
+    identifiable_empathetic              M=3.511  SD=1.003  n=1046
+    identifiable_utilitarian             M=3.154  SD=1.323  n=1025
+    statistical_none                     M=2.834  SD=1.072  n=1041
+    statistical_standard                 M=2.848  SD=0.965  n=1004
+    statistical_empathetic               M=3.229  SD=1.007  n=1045
+    statistical_utilitarian              M=3.232  SD=1.317  n=1034
+
+  IVE by CoT Type:
+    none             d=0.1554  p=0.000417
+    standard         d=0.4131  p=0.0
+    empathetic       d=0.2814  p=0.0
+    utilitarian      d=-0.059  p=0.180506
+
+============================================================
+  EXP7 RESULTS
+============================================================
+
+  Regression (log_fit): R▓=0.0606  slope=-0.109  p=0.0
+
+  Regression (linear_fit): R▓=0.0201  slope=-1.3e-07  p=0.0
+
+============================================================
+  EXP8 RESULTS
+============================================================
+
+  Cell Means:
+    single_unidentified                  M=3.332  SD=0.977  n=1029
+    single_age                           M=3.588  SD=1.089  n=1038
+    single_age_name                      M=3.439  SD=1.086  n=1032
+    single_full                          M=3.598  SD=1.081  n=1015
+    group_unidentified                   M=3.132  SD=1.172  n=1044
+    group_age                            M=3.426  SD=0.895  n=1044
+    group_age_name                       M=3.485  SD=1.211  n=1044
+    group_full                           M=3.594  SD=1.198  n=1029
+
+  Simple Effects:
+    ive_single            d=0.2579  p=0.0
+    ive_group             d=0.3894  p=0.0
+
+============================================================
+  EXP9 RESULTS
+============================================================
+
+  Regression (linear_trend): R▓=0.0002  slope=0.0101  p=0.221254
+
+  Regression (distress_trend): R▓=0.0016  slope=-0.0204  p=0.001694
+
+============================================================
+  EXP10 RESULTS
+============================================================
+
+  Cell Means:
+    near_identifiable                    M=4.083  SD=0.883  n=979
+    near_statistical                     M=2.881  SD=1.013  n=1044
+    middle_identifiable                  M=3.894  SD=0.83  n=979
+    middle_statistical                   M=2.855  SD=0.981  n=979
+    far_identifiable                     M=3.799  SD=1.022  n=964
+    far_statistical                      M=2.8  SD=1.002  n=1044
+
+  - Full results saved to C:\Users\rifat\Desktop\GitHub\IVE-LLM\data\processed\analysis_results.json
+
+  - Table 1 saved to summary_tables/table1_exp1_summary.csv
+
+============================================================
+  PARSE SUCCESS RATES
+============================================================
+  exp1: gemini-3.1-pro: 100%  gemini-2.5-flash: 100%  claude-opus-4.6: 100%  gpt-5.2: 100%  gpt-oss-20b: 100%  deepseek-v3: 100%  deepseek-r1: 100%  grok-4: 100%  qwen3-235b: 100%  kimi-k2.5: 100%  granite-3.3-8b: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  gpt-oss-120b: 100%
+  exp2: gemini-3.1-pro: 100%  gemini-2.5-flash: 100%  claude-opus-4.6: 100%  gpt-5.2: 100%  gpt-oss-20b: 100%  deepseek-v3: 100%  deepseek-r1: 100%  grok-4: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  gpt-oss-120b: 100%
+  exp3: gemini-3.1-pro: 100%  gemini-2.5-flash: 100%  claude-opus-4.6: 100%  gpt-5.2: 100%  gpt-oss-20b: 100%  deepseek-v3: 100%  deepseek-r1: 100%  grok-4: 100%  qwen3-235b: 100%  kimi-k2.5: 100%  granite-3.3-8b: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  gpt-oss-120b: 100%
+  exp4: gemini-3.1-pro: 100%  gemini-2.5-flash: 100%  claude-opus-4.6: 100%  gpt-5.2: 100%  gpt-oss-20b: 100%  deepseek-v3: 100%  deepseek-r1: 100%  grok-4: 100%  qwen3-235b: 100%  kimi-k2.5: 100%  granite-3.3-8b: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  gpt-oss-120b: 100%
+  exp5: gemini-3.1-pro: 100%  gemini-2.5-flash: 100%  claude-opus-4.6: 100%  gpt-5.2: 100%  gpt-oss-20b: 100%  deepseek-v3: 100%  deepseek-r1: 100%  grok-4: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  gpt-oss-120b: 100%
+  exp6: gemini-3.1-pro: 100%  gpt-5.2: 100%  grok-4: 100%  claude-opus-4.6: 100%  deepseek-v3: 100%  deepseek-r1: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  kimi-k2.5: 100%  gpt-oss-120b: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  gemini-2.5-flash: 100%  gpt-oss-20b: 100%
+  exp7: gemini-3.1-pro: 100%  gpt-5.2: 100%  grok-4: 100%  claude-opus-4.6: 100%  deepseek-v3: 100%  deepseek-r1: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  kimi-k2.5: 100%  gpt-oss-120b: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  gemini-2.5-flash: 100%  gpt-oss-20b: 100%
+  exp8: gemini-3.1-pro: 100%  gpt-5.2: 100%  grok-4: 100%  claude-opus-4.6: 100%  deepseek-v3: 100%  deepseek-r1: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  kimi-k2.5: 100%  gpt-oss-120b: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  gemini-2.5-flash: 100%  gpt-oss-20b: 100%
+  exp9: gemini-3.1-pro: 100%  gpt-5.2: 100%  grok-4: 100%  claude-opus-4.6: 100%  deepseek-v3: 100%  deepseek-r1: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  kimi-k2.5: 100%  gpt-oss-120b: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  gemini-2.5-flash: 100%  gpt-oss-20b: 100%
+  exp10: gemini-3.1-pro: 100%  gpt-5.2: 100%  grok-4: 100%  claude-opus-4.6: 100%  deepseek-v3: 100%  deepseek-r1: 100%  llama3-70b-instruct: 100%  llama3-70b-base: 100%  llama3-8b-instruct: 100%  llama3-8b-base: 100%  kimi-k2.5: 100%  gpt-oss-120b: 100%  qwen3-235b: 100%  granite-3.3-8b: 100%  gemini-2.5-flash: 100%  gpt-oss-20b: 100%
+
+============================================================
+  [DONE] Analysis complete.
+============================================================

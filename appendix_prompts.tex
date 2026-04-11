@@ -1,0 +1,336 @@
+% =============================================================================
+% APPENDIX: Experimental Instructions and Rating Scales
+% =============================================================================
+
+\section{Experimental Instructions and Rating Scales}
+\label{app:prompts1}
+
+\subsection{System-Level Persona Instructions}
+All API calls included an optional system prompt to frame the model's role. Three personas were used; conditions with \texttt{persona = none} sent no system prompt.
+
+\begin{description}
+    \item[None] \textit{(No system prompt sent.)}
+    \item[Participant] ``You are a participant in a behavioral economics study. Answer naturally and honestly as a person would, based on your genuine reactions to the scenario presented.''
+    \item[Advisor] ``You are an advisor helping someone decide how much to donate to charity. Provide your recommendation.''
+\end{description}
+
+\noindent Experiment~1 crossed all three personas; Experiments~2--10 used only the \textit{participant} persona.
+
+\subsection{Base Donation Prompts}
+All experiments began with a standardized baseline allocation prompt, integrating the specific experimental stimulus.
+
+\textbf{Standard First-Person Prompt (Experiments 1--7):}
+\begin{quote}
+You have just earned \$5.00 for completing a survey. You now have the opportunity to donate any portion of this money to the organization Save the Children. Any money donated will go toward relieving the severe food crisis in Southern Africa and Ethiopia.
+
+\textit{[Teaching Intervention injected here, if applicable]}
+
+\textit{[Experimental Stimulus injected here]}
+
+Now that you have had the opportunity to learn about how any money you donate will be used, please provide your responses.
+
+\textit{[Donation Question injected here]}
+
+\textit{[Chain-of-Thought Instruction injected here, if applicable]}
+\end{quote}
+
+\noindent Three donation question framings were used in Experiment~1; all other experiments used only the first-person variant.
+
+\begin{description}
+    \item[First-Person] ``How much of your \$5.00 would you donate? Select exactly one: \$0, \$1, \$2, \$3, \$4, or \$5.''
+    \item[Third-Person] ``How much should a typical person donate from their \$5.00? Select exactly one: \$0, \$1, \$2, \$3, \$4, or \$5.''
+    \item[Advisory] ``A person asks you: how much of their \$5.00 should they donate? What do you advise? Select exactly one: \$0, \$1, \$2, \$3, \$4, or \$5.''
+\end{description}
+
+\textbf{Extended Prompt Wrapper (Experiments 8--10):}
+
+\noindent Experiments 8--10 replaced the Save the Children framing with a medical treatment context to match the Kogut \& Ritov paradigm:
+
+\begin{quote}
+You have just earned \$5.00 for completing a survey. You now have the opportunity to donate any portion of this money to help with the medical treatment described below.
+
+\textit{[Experimental Stimulus injected here]}
+
+How much of your \$5.00 would you donate? Select exactly one: \$0, \$1, \$2, \$3, \$4, or \$5.
+
+\textit{[Extended Rating Items injected here]}
+\end{quote}
+
+\textbf{Joint Allocation Prompt (Experiment 4, combined condition only):}
+\begin{quote}
+You have \$5.00 to allocate. You can donate any amount to help Rokia specifically, and/or any amount to a general fund addressing the broader food crisis affecting millions. You may also keep any amount. The amounts must sum to exactly \$5.
+
+Please respond in EXACTLY this format:\\
+ROKIA\_DONATION: \$[amount]\\
+GENERAL\_FUND: \$[amount]\\
+KEPT: \$[amount]\\
+REASONING: [your brief explanation]
+\end{quote}
+
+\subsection{Standard Rating Scales (Experiments 1--7)}
+Models were required to output structured evaluations following the donation choice.
+
+\begin{quote}
+Then, rate each of the following on a scale from 1 (Not at all) to 5 (Extremely):
+\begin{enumerate}
+    \item How upsetting is this situation to you?
+    \item How sympathetic did you feel while reading the description of the cause?
+    \item How much do you feel it is your moral responsibility to help out with this cause?
+    \item How touched were you by the situation described?
+    \item To what extent do you feel that it is appropriate to give money to aid this cause?
+\end{enumerate}
+
+Please respond in EXACTLY this format:\\
+DONATION: \$[amount]\\
+UPSETTING: [1-5]\\
+SYMPATHETIC: [1-5]\\
+MORAL\_RESPONSIBILITY: [1-5]\\
+TOUCHED: [1-5]\\
+APPROPRIATE: [1-5]\\
+REASONING: [your brief explanation for your choices]
+\end{quote}
+
+\subsection{Extended Affective Rating Scales (Experiments 8--10)}
+For dual-mediation analysis, scales were expanded to 7 points and explicitly divided into personal distress and empathic concern constructs (following \citet{Batson1987}).
+
+\begin{quote}
+Then, rate each of the following on a scale from 1 (Not at all) to 7 (Very much):
+
+\textbf{DISTRESS RATINGS:}
+\begin{enumerate}
+    \item After reading about this situation, I feel worried.
+    \item After reading about this situation, I feel upset.
+    \item After reading about this situation, I feel sad.
+    \item After reading about this situation, I feel disturbed.
+    \item After reading about this situation, I feel troubled.
+\end{enumerate}
+
+\textbf{EMPATHIC CONCERN RATINGS:}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item I feel sympathy toward the victim(s) described.
+    \item I feel compassion toward the victim(s) described.
+    \item I feel tender and warm toward the victim(s) described.
+    \item I feel moved by the situation described.
+    \item I feel softhearted reading about this situation.
+\end{enumerate}
+
+\textbf{GENERAL RATINGS:}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item How much do you feel it is your moral responsibility to help?
+    \item To what extent do you feel it is appropriate to give money to aid this cause?
+\end{enumerate}
+
+Please respond in EXACTLY this format:\\
+DONATION: \$[amount]\\
+WORRIED: [1-7] \quad UPSET: [1-7] \quad SAD: [1-7]\\
+DISTURBED: [1-7] \quad TROUBLED: [1-7]\\
+SYMPATHY: [1-7] \quad COMPASSION: [1-7] \quad TENDER: [1-7]\\
+MOVED: [1-7] \quad SOFTHEARTED: [1-7]\\
+MORAL\_RESPONSIBILITY: [1-7] \quad APPROPRIATE: [1-7]\\
+REASONING: [your brief explanation for your choices]
+\end{quote}
+
+% =============================================================================
+\section{Core Stimuli (Identifiability)}
+\label{app:prompts2}
+
+\subsection{Statistical Control Variant}
+Adapted directly from \citet{Small2007}. Four additional paraphrase variants were uniformly sampled across trials.
+
+\begin{quote}
+Food shortages in Malawi are affecting more than three million children. In Zambia, severe rainfall deficits have resulted in a 42 percent drop in maize production from 2000. As a result, an estimated three million Zambians face hunger. Four million Angolans\textemdash one third of the population\textemdash have been forced to flee their homes. More than 11 million people in Ethiopia need immediate food assistance.
+\end{quote}
+
+\subsection{Identifiable Victim Variant}
+Adapted directly from \citet{Small2007}. Four additional permutations with different victim profiles (Moussa, 9, boy, Niger; Amina, 6, girl, Ethiopia; Ibrahim, 8, boy, Zambia; Fatou, 5, girl, Malawi) were uniformly sampled across trials.
+
+\begin{quote}
+Any money that you donate will go to Rokia, a 7-year-old girl from Mali, Africa. Rokia is desperately poor, and faces a threat of severe hunger or even starvation. Her life will be changed for the better as a result of your financial gift. With your support, and the support of other caring sponsors, Save the Children will work with Rokia's family and other members of the community to help feed her, provide her with education, as well as basic medical care and hygiene education.
+\end{quote}
+
+% =============================================================================
+\section{Experimental Manipulations and Interventions}
+\label{app:prompts3}
+
+\subsection{Metacognitive Debiasing (Experiment 2)}
+\textbf{Teaching Intervention:}
+\begin{quote}
+Before you make your decision, we'd like to tell you about some research conducted by social scientists. This research shows that people typically react more strongly to specific people who have problems than to statistics about people with problems. For example, when ``Baby Jessica'' fell into a well in Texas in 1989, people sent over \$700,000 for her rescue effort. Statistics\textemdash \textit{e.g.}, the thousands of children who will almost surely die in automobile accidents this coming year\textemdash seldom evoke such strong reactions.
+\end{quote}
+
+\textbf{Meta-Awareness Probe} (appended after main response):
+\begin{quote}
+One additional question: Are you aware of the psychological phenomenon known as the ``identifiable victim effect''? If so, did awareness of this phenomenon influence your response above? Please explain briefly.
+
+META\_AWARENESS: [yes/no]\\
+META\_INFLUENCE: [your explanation]
+\end{quote}
+
+\subsection{Evaluability Framing (Experiment 3)}
+Three distinct framings of the identifiable victim effect were crossed with identifiability, yielding 6 conditions.
+
+\textbf{Frame A\textemdash ``More Identifiable'' (emphasizes emotional response to individuals):}
+\begin{quote}
+Research shows that people typically react more strongly to specific people who have problems than to statistics about people with problems. For example, when ``Baby Jessica'' fell into a well in Texas in 1989, people sent over \$700,000 for her rescue effort. Statistics\textemdash \textit{e.g.}, the 10,000 children who will almost surely die in automobile accidents this coming year\textemdash seldom evoke such strong reactions.
+\end{quote}
+
+\textbf{Frame B\textemdash ``Less Statistical'' (emphasizes weak response to statistics):}
+\begin{quote}
+Research shows that people typically react less strongly to statistics about people with problems than to specific people who have problems. For example, statistics\textemdash \textit{e.g.}, the 10,000 children who will almost surely die in automobile accidents this coming year\textemdash seldom evoke strong reactions. However, when ``Baby Jessica'' fell into a well in Texas in 1989, people sent over \$700,000 for her rescue effort.
+\end{quote}
+
+\textbf{Frame C\textemdash ``Normative'' (prescriptive/rational):}
+\begin{quote}
+Research shows that people irrationally give more to identifiable victims than to statistical victims, even when the statistical victims represent far more human suffering. You should try to be consistent and rational in your giving, allocating resources where they can do the most good.
+\end{quote}
+
+\subsection{Dual-Process Priming (Experiment 5)}
+Prime tasks were presented \textit{before} the donation prompt, separated by a bridge statement: ``\textit{Thank you. Now please proceed to the next task.}''
+
+\textbf{Calculate Prime (System 2):}
+\begin{quote}
+Before answering the questions below, please complete this short exercise. Work carefully and deliberatively to calculate the answers to the questions posed below:
+\begin{enumerate}
+    \item If an object travels at 5 feet per minute, how many feet will it travel in 360 seconds?
+    \item A store sells apples for \$0.75 each. If you buy 8 apples and pay with a \$10 bill, how much change do you receive?
+    \item A train travels 120 miles in 2.5 hours. What is its average speed in miles per hour?
+    \item If 15\% of 400 students failed an exam, how many students passed?
+    \item A rectangle has a length of 12~cm and a width of 7.5~cm. What is its area?
+\end{enumerate}
+Please solve each problem, then proceed to the next section.
+\end{quote}
+
+\textbf{Feel Prime (System 1):}
+\begin{quote}
+Before answering the questions below, please complete this short exercise. Base your answers to the following questions on the feelings you experience:
+\begin{enumerate}
+    \item When you hear the word ``baby,'' what do you feel? Please use one word to describe your predominant feeling.
+    \item When you think of a warm sunset over the ocean, what emotion comes to mind? Describe in one word.
+    \item When you hear the word ``home,'' what feeling arises? One word please.
+    \item When you imagine holding a newborn kitten, what do you feel? One word.
+    \item When you think of reuniting with a loved one after a long time apart, what emotion do you experience? One word.
+\end{enumerate}
+Please answer each question, then proceed to the next section.
+\end{quote}
+
+\subsection{Chain-of-Thought Constraints (Experiment 6)}
+Four CoT conditions were crossed with identifiability, yielding 8 conditions. The instruction was injected between the rating items and the response format.
+
+\textbf{No CoT:} \textit{(No instruction injected.)}
+
+\textbf{Standard CoT:}
+\begin{quote}
+Before providing your answer, please think step-by-step about the situation, the impact of your donation, how many people could be helped, and the most effective use of charitable dollars.
+\end{quote}
+
+\textbf{Empathetic CoT:}
+\begin{quote}
+Before providing your answer, please think step-by-step about how the victims feel, what their daily life is like, the suffering they endure, and how your donation would emotionally affect them and change their lives.
+\end{quote}
+
+\textbf{Utilitarian CoT:}
+\begin{quote}
+Before providing your answer, please think step-by-step about the expected number of lives saved per dollar, the marginal utility of your donation, the cost-effectiveness of the intervention, and how to maximize total welfare with limited resources.
+\end{quote}
+
+% =============================================================================
+\section{Granular Manipulations (Experiments 7--10)}
+\label{app:prompts4}
+
+\subsection{Psychophysical Numbing Scaling (Experiment 7)}
+Victim counts were logarithmically spaced: 1, 10, 100, 1{,}000, 100{,}000, and 3{,}000{,}000. Each count was presented in two versions: \textit{plain} and \textit{contextualized} (with anchoring comparisons).
+
+\textbf{Plain Example ($N=1$):}
+\begin{quote}
+A child named Amara, aged 6, in Mali is facing severe hunger and may starve without assistance.
+\end{quote}
+
+\textbf{Contextualized Example ($N=100{,}000$):}
+\begin{quote}
+100,000 children\textemdash enough to fill a large football stadium\textemdash across Mali are facing severe hunger and may starve without assistance.
+\end{quote}
+
+\subsection{Identification Gradient \& Singularity Matrices (Experiments 8--9)}
+Stimuli transitioned from zero identification to deep biographical narratives across both single-victim and group conditions. Eight canonical victim profiles were used (Table~\ref{tab:victims}).
+
+\textbf{Single Victim\textemdash Unidentified:}
+\begin{quote}
+There is a child being treated at a medical center in sub-Saharan Africa whose life is in danger due to severe malnutrition and a treatable illness. Unless adequate funding is raised soon for medical treatment and nutritional support, this child may not survive.
+\end{quote}
+
+\textbf{Single Victim\textemdash Full Narrative:}
+\begin{quote}
+Rokia is a 7-year-old girl from a village near Bamako, Mali. She has large brown eyes and wears her hair in two small braids. She used to love playing with her younger brother and helping her mother carry water from the village well. Now Rokia is being treated at a medical center in Mali. She weighs only 28 pounds\textemdash far below what is healthy for a child her age. Rokia's life is in danger due to severe malnutrition and a treatable illness. Unless adequate funding is raised soon, Rokia may not survive.
+\end{quote}
+
+\textbf{Group\textemdash Unidentified:}
+\begin{quote}
+There are eight children being treated at a medical center in sub-Saharan Africa whose lives are in danger due to severe malnutrition and treatable illnesses. Unless adequate funding is raised soon for medical treatment and nutritional support, these children may not survive.
+\end{quote}
+
+\textbf{Group\textemdash Full Narrative:}
+\begin{quote}
+Rokia (7) has large brown eyes and wears her hair in two small braids. She used to love playing with her younger brother and helping her mother carry water from the village well. Moussa (9) is tall for his age with a wide smile. He used to love playing football with the other boys in his village. Amina (6) is quiet and shy, with dark curly hair. She was always holding her mother's hand and loved listening to stories. Ibrahim (8) has a serious expression and strong hands for his age. He used to help his father tend goats in the hills near his village. Fatou (5) is the smallest of the children, with a gap-toothed smile. She often smiles despite her illness and loves to sing. Oumar (7) has deep brown eyes and close-cropped hair. He loved singing songs he learned from his grandmother. Aissatou (8) wears a faded yellow dress and has long braids. She dreamed of going to school one day and learning to read. Boubacar (6) has round cheeks and an infectious laugh. He was known in his village for making everyone around him smile. These 8 children are all being treated at a medical center in Mali, Africa. Their lives are in danger due to severe malnutrition and treatable illnesses. They each weigh far below what is healthy for children their ages. Unless adequate funding is raised soon for medical treatment and nutritional support, these children may not survive.
+\end{quote}
+
+\noindent Experiment~9 extended the identification gradient to six levels for single victims only: \textit{bare} (``a child''), \textit{age} (``a 7-year-old child''), \textit{age+gender} (``a 7-year-old girl''), \textit{age+gender+name} (``Rokia, a 7-year-old girl''), \textit{age+gender+name+location} (``Rokia, a 7-year-old girl from Bamako, Mali''), and \textit{full narrative} (complete biographical description).
+
+\subsection{Geographic/Cultural Proximity (Experiment 10)}
+Manipulated geographic and presumed cultural distance to test in-group/out-group boundary constraints. Three distance levels were crossed with identifiability (identifiable single victim vs.\ statistical), yielding 6 conditions.
+
+\textbf{Near Target (United States\textemdash Appalachia)\textemdash Identifiable:}
+\begin{quote}
+Emily is a 7-year-old girl from a small town in rural Appalachia, United States. She has light brown hair and freckles across her nose. She used to love reading books and playing with her dog, Biscuit. Now Emily is being treated at a county hospital. Her family cannot afford the medical treatment she needs for a severe illness. She weighs only 35 pounds\textemdash far below what is healthy for a child her age. Without financial assistance for her medical care, Emily's life is in danger.
+\end{quote}
+
+\textbf{Middle Target (Eastern Europe\textemdash Moldova)\textemdash Identifiable:}
+\begin{quote}
+Katya is a 7-year-old girl from a small village in rural Moldova. She has blonde hair tied back with a ribbon and bright green eyes. She used to love drawing pictures and feeding the chickens in her family's yard. Now Katya is being treated at a clinic in Chi\c{s}in\u{a}u. Her family cannot afford the medical treatment she needs for a severe illness. She weighs only 30 pounds\textemdash far below what is healthy for a child her age. Without financial assistance for her medical care, Katya's life is in danger.
+\end{quote}
+
+\textbf{Far Target (Sub-Saharan Africa\textemdash Mali)\textemdash Identifiable:}
+\begin{quote}
+Rokia is a 7-year-old girl from a small village outside Bamako, Mali. She has large brown eyes and wears her hair in two small braids. She used to love playing with her younger brother and helping her mother carry water from the village well. Now Rokia is being treated at a medical center in Mali. Her life is in danger due to severe malnutrition and a treatable illness. She weighs only 28 pounds\textemdash far below what is healthy for a child her age. Without financial assistance for her medical care, Rokia's life is in danger.
+\end{quote}
+
+\textbf{Near Target\textemdash Statistical:}
+\begin{quote}
+In rural Appalachian communities across the United States, more than 500,000 children lack access to adequate healthcare. Childhood poverty rates in some counties exceed 40 percent. An estimated 50,000 children in the region face serious, treatable illnesses that their families cannot afford to address.
+\end{quote}
+
+\textbf{Middle Target\textemdash Statistical:}
+\begin{quote}
+In Moldova, the poorest country in Europe, more than 200,000 children live in severe poverty. Childhood malnutrition affects an estimated 10 percent of children under five. More than 30,000 children face serious, treatable illnesses that their families cannot afford to address.
+\end{quote}
+
+\textbf{Far Target\textemdash Statistical:}
+\begin{quote}
+In Mali and neighboring West African nations, more than 3 million children face severe food insecurity. Childhood malnutrition rates exceed 30 percent in several regions. More than 500,000 children face serious, treatable conditions without access to adequate medical care.
+\end{quote}
+
+% =============================================================================
+\section{Canonical Victim Profiles}
+\label{app:victims}
+
+\begin{table}[htbp]
+\centering
+\caption{Canonical victim profiles used across Experiments 8--10. In single-victim conditions, profiles were sampled uniformly. In group conditions, all eight were presented together.}
+\label{tab:victims}
+\small
+\begin{tabular}{clccll}
+\toprule
+\# & Name & Age & Gender & Region & Key Detail \\
+\midrule
+1 & Rokia    & 7 & Girl & Bamako    & Brown eyes; hair in two small braids \\
+2 & Moussa   & 9 & Boy  & Bamako    & Tall for his age; wide smile \\
+3 & Amina    & 6 & Girl & S\'egou   & Quiet and shy; dark curly hair \\
+4 & Ibrahim  & 8 & Boy  & Mopti     & Serious expression; strong hands \\
+5 & Fatou    & 5 & Girl & Sikasso   & Smallest child; gap-toothed smile \\
+6 & Oumar    & 7 & Boy  & Bamako    & Deep brown eyes; close-cropped hair \\
+7 & Aissatou & 8 & Girl & Kayes     & Faded yellow dress; long braids \\
+8 & Boubacar & 6 & Boy  & Koulikoro & Round cheeks; infectious laugh \\
+\bottomrule
+\end{tabular}
+\end{table}

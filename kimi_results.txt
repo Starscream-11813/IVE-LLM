@@ -1,0 +1,129 @@
+﻿============================================================
+  IVE-LLM ANALYSIS
+============================================================
+  [OK] Loaded exp1: 61 valid trials from exp1_basic_ive.csv
+  [!] exp2: no valid (parse_success) trials
+  [OK] Loaded exp3: 52 valid trials from exp3_framing.csv
+  [OK] Loaded exp4: 84 valid trials from exp4_joint_separate.csv
+  [!] exp5: no valid (parse_success) trials
+  [OK] Loaded exp6: 120 valid trials from exp6_chain_of_thought.csv
+  [OK] Loaded exp7: 156 valid trials from exp7_psychophysical_numbing.csv
+  [OK] Loaded exp8: 485 valid trials from exp8_singularity.csv
+  [OK] Loaded exp9: 370 valid trials from exp9_identification_gradient.csv
+  [OK] Loaded exp10: 375 valid trials from exp10_ingroup_outgroup.csv
+
+============================================================
+  EXP1 RESULTS
+============================================================
+
+  Per-Model IVE:
+    kimi-k2.5             Ident=4.368  Stat=3.188  d=1.5622  p=5.9e-05
+
+  Pooled: d=1.5622  p=5.9e-05
+
+============================================================
+  EXP3 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_frame_more              M=2.231  SD=0.439  n=13
+    identifiable_frame_less              M=2.769  SD=0.439  n=13
+    identifiable_frame_normative         M=3.0  SD=0.0  n=3
+    statistical_frame_more               M=nan  SD=nan  n=0
+    statistical_frame_less               M=2.0  SD=0.0  n=13
+    statistical_frame_normative          M=2.0  SD=0.0  n=10
+
+============================================================
+  EXP4 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable                         M=2.0  SD=0.0  n=26
+    statistical                          M=2.0  SD=0.0  n=22
+    combined                             M=2.361  SD=0.487  n=36
+
+============================================================
+  EXP6 RESULTS
+============================================================
+
+  Cell Means:
+    identifiable_none                    M=2.0  SD=0.0  n=26
+    identifiable_standard                M=2.286  SD=0.463  n=21
+    identifiable_empathetic              M=2.404  SD=0.496  n=47
+    identifiable_utilitarian             M=nan  SD=nan  n=0
+    statistical_none                     M=2.0  SD=0.0  n=12
+    statistical_standard                 M=2.667  SD=0.577  n=3
+    statistical_empathetic               M=2.0  SD=0.0  n=11
+    statistical_utilitarian              M=nan  SD=nan  n=0
+
+  IVE by CoT Type:
+    none             d=0.0  p=None
+    standard         d=-0.8029  p=0.206758
+    empathetic       d=0.8992  p=0.009535
+    utilitarian      d=None  p=None
+
+============================================================
+  EXP7 RESULTS
+============================================================
+
+  Regression (log_fit): R▓=0.0678  slope=-0.0224  p=0.00103
+
+  Regression (linear_fit): R▓=0.0087  slope=-2e-08  p=0.248024
+
+============================================================
+  EXP8 RESULTS
+============================================================
+
+  Cell Means:
+    single_unidentified                  M=3.0  SD=0.0  n=65
+    single_age                           M=2.954  SD=0.211  n=65
+    single_age_name                      M=2.908  SD=0.292  n=65
+    single_full                          M=3.0  SD=0.0  n=45
+    group_unidentified                   M=3.0  SD=0.0  n=65
+    group_age                            M=2.0  SD=0.0  n=65
+    group_age_name                       M=3.0  SD=0.0  n=65
+    group_full                           M=3.0  SD=0.0  n=50
+
+  Simple Effects:
+    ive_single            d=0.0  p=None
+    ive_group             d=0.0  p=None
+
+============================================================
+  EXP9 RESULTS
+============================================================
+
+  Regression (linear_trend): R▓=0.0155  slope=-0.0179  p=0.016497
+
+  Regression (distress_trend): R▓=0.0795  slope=0.0452  p=0.0
+
+============================================================
+  EXP10 RESULTS
+============================================================
+
+  Cell Means:
+    near_identifiable                    M=3.0  SD=0.0  n=65
+    near_statistical                     M=2.0  SD=0.0  n=65
+    middle_identifiable                  M=3.0  SD=0.0  n=65
+    middle_statistical                   M=2.0  SD=0.0  n=65
+    far_identifiable                     M=3.0  SD=0.0  n=50
+    far_statistical                      M=2.0  SD=0.0  n=65
+
+  - Full results saved to C:\Users\rifat\Desktop\GitHub\IVE-LLM\data\processed\analysis_results.json
+
+  - Table 1 saved to summary_tables/table1_exp1_summary.csv
+
+============================================================
+  PARSE SUCCESS RATES
+============================================================
+  exp1: kimi-k2.5: 100%
+  exp3: kimi-k2.5: 100%
+  exp4: kimi-k2.5: 100%
+  exp6: kimi-k2.5: 100%
+  exp7: kimi-k2.5: 100%
+  exp8: kimi-k2.5: 100%
+  exp9: kimi-k2.5: 100%
+  exp10: kimi-k2.5: 100%
+
+============================================================
+  [DONE] Analysis complete.
+============================================================
