@@ -1,8 +1,8 @@
-# IVE-LLM
+# Narrative over Numbers: The Identifiable Victim Effect and its Amplification Under Alignment and Reasoning in Large Language Models
 
-**The Identifiable Victim Effect in Large Language Models** — Sympathy, Callousness, and Deliberative Reasoning in Artificial Agents.
+This repository contains the code and data of the paper titled "Narrative over Numbers: The Identifiable Victim Effect and its Amplification Under Alignment and Reasoning in Large Language Models."
 
-A research codebase that runs behavioral experiments on LLMs via the Replicate API to test whether language models replicate the findings from Small, Loewenstein, & Slovic (2007).
+This codebase runs behavioral experiments on LLMs via the Replicate API to test whether language models replicate the findings from Small, Loewenstein, & Slovic (2007).
 
 ## Research Questions
 
